@@ -31,7 +31,12 @@ hide_edge_borders none
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-exec --no-startup-id pulseaudio &
+# Start audtio service
+exec --no-startup-id pipewire &
+exec --no-startup-id wireplumber &
+exec --no-startup-id pipewire-pulse &
+# Set initial keyboard layouts: US and Russian
+exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option 'grp:win_space_toggle'
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
