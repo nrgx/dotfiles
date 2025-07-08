@@ -4,6 +4,9 @@ sudo xbps-install -Syu \
 	st \
 	dwm \
 	dmenu \
+	slock \
+	slstatus \
+	xautolock \
 	dbus \
 	git \
 	zsh \
@@ -38,7 +41,6 @@ sudo xbps-install -Syu \
 	virt-manager \
 	polkit \
 	seatd \
-	slock \
 	mesa-nouveau-dri \
 	xf86-video-nouveau
  		
