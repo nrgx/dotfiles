@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Install fundamebtal software
 sudo xbps-install -Syu \
 	dbus \
 	git \
@@ -11,6 +12,8 @@ sudo xbps-install -Syu \
 	xorg \
 	xorg-minimal \
 	xinit \
+	lightdm \
+	lightdm-mini-greeter \
 	sxhkd \
 	base-devel \
 	libX11-devel \
@@ -38,6 +41,9 @@ sudo xbps-install -Syu \
 	mesa-nouveau-dri \
 	xf86-video-nouveau
  	
+# Add user to groups
+sudo usermod -aG input,video,libvirt,kvm,_seatd $USER
+
 # Copying zsh, tmux, xinit files to ~
 cp .zshrc ~
 cp .tmux.conf ~
