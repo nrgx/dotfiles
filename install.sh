@@ -16,6 +16,7 @@ sudo xbps-install -Syu \
 	libX11-devel \
 	libXft-devel \
 	libXinerama-devel \
+	libXrandr-devel \
 	freetype-devel \
 	fontconfig-devel \
 	feh \
@@ -37,6 +38,10 @@ sudo xbps-install -Syu \
 	mesa-nouveau-dri \
 	xf86-video-nouveau
  	
+# Copying zsh, tmux, xinit files to ~
+cp .zshrc ~
+cp .tmux.conf ~
+cp .xinitrc ~
 # Adding wallpapers
 cp pics ~
 
@@ -54,6 +59,8 @@ do
 	cd $dir && sudo make clean install && cd ..
 done
 
+# FROM NOW ON PATH IS ~
+
 # Setting up audio
 sudo mkdir -p /etc/pipewire/pipewire.conf.d
 sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d
@@ -70,9 +77,4 @@ sudo ln -s /etc/sv/polkitd /var/service
 sudo ln -s /etc/sv/libvirtd /var/service
 sudo ln -s /etc/sv/virtlogd /var/service
 sudo ln -s /etc/sv/virtlockd /var/service
-
-# Copying zsh, tmux, xinit files to ~
-cp .zshrc ~
-cp .tmux.conf ~
-cp .xinitrc ~
 
