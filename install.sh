@@ -71,3 +71,8 @@ sudo ln -s /etc/sv/libvirtd /var/service
 sudo ln -s /etc/sv/virtlogd /var/service
 sudo ln -s /etc/sv/virtlockd /var/service
 
+# Copying zsh, tmux, xinit files to ~
+cp .zshrc ~
+cp .tmux.conf ~
+cp .xinitrc ~
+
