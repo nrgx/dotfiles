@@ -1,3 +1,7 @@
+# set layouts
+setxkbmap -layout us,ru -option grp:alt_space_toggle &
+sxhkd &
+
 # start window manager
 exec dwm
 
@@ -7,7 +11,7 @@ slstatus &
 # start audio
 exec pipewire
 
-# run wallpaper
+# set wallpaper
 feh --bg-scale ~/pics/wallpaper.png
 
 # start everything
