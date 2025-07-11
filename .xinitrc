@@ -8,5 +8,14 @@ sxhkd &           # hotkeys
 slstatus &        # status bar
 feh --bg-scale $HOME/pics/wallpaper.png &  # wallpaper
 
+# --- lock screen ---
+xautolock \
+	-detectsleep \
+	-time 30 \
+	-notify 30 \
+	-notifier 'xsetroot -name "Locking screen in 30s"' \
+	-locker "slock" \
+	& 
+
 # --- finally launch the WM ---
 exec dwm
