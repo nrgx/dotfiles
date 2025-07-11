@@ -12,8 +12,6 @@ sudo xbps-install -Syu \
 	xorg \
 	xorg-minimal \
 	xinit \
-	lightdm \
-	lightdm-mini-greeter \
 	sxhkd \
 	base-devel \
 	libX11-devel \
@@ -44,16 +42,16 @@ sudo xbps-install -Syu \
 # Add user to groups
 sudo usermod -aG input,video,libvirt,kvm,_seatd $USER
 
-# Copying zsh, tmux, xinit files to ~
-cp .zshrc ~
-cp .tmux.conf ~
-cp .xinitrc ~
+# Copying zsh, tmux, xinit files to $HOME
+cp .zshrc $HOME
+cp .tmux.conf $HOME
+cp .xinitrc $HOME
 # Adding wallpapers
-cp pics ~
+cp pics $HOME
 
 # Making suckless setup
-mkdir -p ~/suckless
-cd ~/suckless
+mkdir -p $HOME/.suckless
+cd $HOME/.suckless
 git clone https://git.suckless.org/st
 git clone https://git.suckless.org/dwm
 git clone https://git.suckless.org/dmenu
@@ -65,7 +63,7 @@ do
 	cd $dir && sudo make clean install && cd ..
 done
 
-# FROM NOW ON PATH IS ~
+# FROM NOW ON PATH IS $HOME
 
 # Setting up audio
 sudo mkdir -p /etc/pipewire/pipewire.conf.d
