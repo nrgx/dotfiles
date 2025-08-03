@@ -38,11 +38,10 @@ sudo xbps-install -Syu \
 	seatd \
 	mesa-nouveau-dri \
 	xf86-video-nouveau \
-	openntpd
+	chrony
 
 # Set time
 sudo ln -sf /usr/share/zoneinfo/Asia/Almaty /etc/localtime
-sudo ntpd -p pool.ntp.org
 
 # Add user to groups
 sudo usermod -aG input,video,libvirt,kvm,_seatd $USER
@@ -81,7 +80,7 @@ xrandr --output DP-4 --mode 1920X1080 --rate 239.96
 # Enabling services
 sudo ln -s /etc/sv/dbus /var/service
 sudo ln -s /etc/sv/seatd /var/service
-sudo ln -s /etc/sv/ntpd /var/service
+sudo ln -s /etc/sv/chronyd /var/service
 # services for virtualization with qemu 
 sudo ln -s /etc/sv/polkitd /var/service
 sudo ln -s /etc/sv/libvirtd /var/service
