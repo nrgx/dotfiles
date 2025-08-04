@@ -107,12 +107,12 @@ source $ZSH/oh-my-zsh.sh
 alias v=nvim
 alias tmux="tmux -2"
 
-if [ -z "$FASTFETCH_SHOWN" ]; then
-    fastfetch
-    export FASTFETCH_SHOWN=1
-fi
-
 # Initialize zsh completions (added by deno install script)
 autoload -Uz compinit
 compinit
 
+export DENO_INSTALL="$HOME/.deno"
+export PATH="/usr/local/go/bin:$DENO_INSTALL/bin:$PATH"
+
+# uv 
+. "$HOME/.local/bin/env"

@@ -38,18 +38,21 @@ sudo xbps-install -Syu \
 	seatd \
 	mesa-nouveau-dri \
 	xf86-video-nouveau \
-	chrony
+	chrony \
+	lightdm \
+	lightdm-mini-greeter
 
 # Set time
 sudo ln -sf /usr/share/zoneinfo/Asia/Almaty /etc/localtime
 
 # Add user to groups
-sudo usermod -aG input,video,libvirt,kvm,_seatd $USER
+sudo usermod -aG input,video,libvirt,kvm $USER
 
 # Copying zsh, tmux, xinit files to $HOME
 cp .zshrc $HOME
 cp .tmux.conf $HOME
-cp .xinitrc $HOME
+cp .xprofile $HOME
+sudo cp pics/lock.jpg /etc/lightdm
 # Adding wallpapers
 cp pics $HOME
 
@@ -74,6 +77,9 @@ sudo mkdir -p /etc/pipewire/pipewire.conf.d
 sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d
 sudo ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d
 
+# Setting up mini greeter
+sudo cp lightdm-mini-greeter.conf /etc/lightdm
+
 # Setting up visuals
 xrandr --output DP-4 --mode 1920X1080 --rate 239.96
 
@@ -81,6 +87,7 @@ xrandr --output DP-4 --mode 1920X1080 --rate 239.96
 sudo ln -s /etc/sv/dbus /var/service
 sudo ln -s /etc/sv/seatd /var/service
 sudo ln -s /etc/sv/chronyd /var/service
+sudo ln -s /etc/sv/lightdm /var/service
 # services for virtualization with qemu 
 sudo ln -s /etc/sv/polkitd /var/service
 sudo ln -s /etc/sv/libvirtd /var/service
