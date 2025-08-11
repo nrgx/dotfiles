@@ -38,6 +38,7 @@ sudo xbps-install -Syu \
 	chrony \
 	lightdm \
 	lightdm-mini-greeter \
+	elogind \
 	firefox
 
 # Set time
@@ -76,6 +77,9 @@ sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pip
 sudo ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d
 
 # Setting up mini greeter
+sudo mkdir /usr/share/xsessions
+sudo cp dwm.desktop /usr/share/xsessions
+sudo cp lightdm.conf /etc/lightdm
 sudo cp lightdm-mini-greeter.conf /etc/lightdm
 
 # Setting up visuals
@@ -85,6 +89,7 @@ xrandr --output DP-4 --mode 1920X1080 --rate 239.96
 sudo ln -s /etc/sv/dbus /var/service
 sudo ln -s /etc/sv/chronyd /var/service
 sudo ln -s /etc/sv/lightdm /var/service
+sudo ln -s /etc/sv/elogind /var/service
 # services for virtualization with qemu 
 sudo ln -s /etc/sv/polkitd /var/service
 sudo ln -s /etc/sv/libvirtd /var/service
