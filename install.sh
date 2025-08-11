@@ -10,8 +10,6 @@ sudo xbps-install -Syu \
 	wget \
 	xautolock \
 	xorg \
-	xorg-minimal \
-	xinit \
 	sxhkd \
 	base-devel \
 	libX11-devel \
@@ -35,12 +33,12 @@ sudo xbps-install -Syu \
 	qemu \
 	virt-manager \
 	polkit \
-	seatd \
 	mesa-nouveau-dri \
 	xf86-video-nouveau \
 	chrony \
 	lightdm \
-	lightdm-mini-greeter
+	lightdm-mini-greeter \
+	firefox
 
 # Set time
 sudo ln -sf /usr/share/zoneinfo/Asia/Almaty /etc/localtime
@@ -54,7 +52,7 @@ cp .tmux.conf $HOME
 cp .xprofile $HOME
 sudo cp pics/lock.jpg /etc/lightdm
 # Adding wallpapers
-cp pics $HOME
+cp -r pics $HOME
 
 # Making suckless setup
 mkdir -p $HOME/.suckless
@@ -85,7 +83,6 @@ xrandr --output DP-4 --mode 1920X1080 --rate 239.96
 
 # Enabling services
 sudo ln -s /etc/sv/dbus /var/service
-sudo ln -s /etc/sv/seatd /var/service
 sudo ln -s /etc/sv/chronyd /var/service
 sudo ln -s /etc/sv/lightdm /var/service
 # services for virtualization with qemu 
