@@ -1,6 +1,6 @@
 # --- keyboard & monitor ---
 setxkbmap -layout us,ru -option grp:super_space_toggle &
-xrandr --output DP-4 --mode 1920x1080 --rate 239.96 &
+xrandr --output DP-3 --mode 1920x1080 --rate 239.96 &
 
 # --- services / daemons ---
 pipewire &        # audio
