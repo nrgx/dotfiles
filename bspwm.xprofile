@@ -49,12 +49,12 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 	unset f
 fi
 
-xrandr --output DP-0 --mode 1920x1080 --rate 239.96
+xrandr --output DP-0 --mode 1920x1080 --rate 239.96 &
+setxkbmap -layout us,ru -option grp:super_space_toggle &
 polybar &
 pipewire &
 wireplumber &
-feh --bg-scale $HOME/pictures/wallpaper.png &
-setxkbmap -option grp:super_space_toggle us,ru
+feh --bg-scale $HOME/pictures/wallpaper.jpg &
 picom -f &
 xsetroot -cursor_name left_ptr
 sxhkd &

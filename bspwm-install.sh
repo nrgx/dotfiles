@@ -1,6 +1,8 @@
 #!/bin/sh
 
+sudo xbps-install -Syu
 sudo xbps-install -Syu \
+	sddm \
 	base-devel \
 	nvidia \
 	wget \
