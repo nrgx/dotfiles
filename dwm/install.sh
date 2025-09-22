@@ -48,10 +48,10 @@ sudo ln -sf /usr/share/zoneinfo/Asia/Almaty /etc/localtime
 sudo usermod -aG input,video,libvirt,kvm $USER
 
 # Copying zsh, tmux, xinit files to $HOME
-cp .zshrc $HOME
-cp .tmux.conf $HOME
+# cp .zshrc $HOME
+# cp .tmux.conf $HOME
 cp .xprofile $HOME
-sudo cp pics/lock.jpg /etc/lightdm
+# sudo cp pics/lock.jpg /etc/lightdm
 # Adding wallpapers
 cp -r pics $HOME
 
