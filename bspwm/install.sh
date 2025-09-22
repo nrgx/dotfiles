@@ -72,3 +72,8 @@ sudo ln -s /etc/sv/virtlockd	/var/service
 # Fonts setup
 sudo mkdir -p /usr/share/fonts/NerdFonts/ttf
 # Go install FiraCode and symbols font and run fc-cache -fv
+
+# Copy dotfiles to home root
+cp config ~/.config
+
+
