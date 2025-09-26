@@ -52,6 +52,7 @@ sudo xbps-install -Syu \
 	pipewire \
 	wireplumber \
 	alsa-pipewire \
+	rtkit \
 	xbacklight \
 	dbus \
 	polkit \
