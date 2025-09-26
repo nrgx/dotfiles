@@ -44,6 +44,8 @@ sudo xbps-install -Syu \
 	feh \
 	conky \
 	fastfetch \
+	btop \
+	fzf \
 	ripgrep \
 	ffmpeg \
 	os-prober \
