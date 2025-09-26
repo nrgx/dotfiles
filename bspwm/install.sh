@@ -65,6 +65,7 @@ sudo xbps-install -Syu \
 
 # Enable services
 sudo ln -s /etc/sv/dbus		/var/service
+sudo ln -s /etc/sv/rtkit	/var/service
 sudo ln -s /etc/sv/polkitd	/var/service
 sudo ln -s /etc/sv/sddm		/var/service
 sudo ln -s /etc/sv/elogind	/var/service
