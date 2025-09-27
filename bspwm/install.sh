@@ -29,6 +29,7 @@ sudo xbps-install -Syu \
 	xinit \
 	xrandr \
 	xsetroot \
+	setxkbmap \
 	xorg-input-drivers \
 	xf86-input-libinput \
 	xrdb \

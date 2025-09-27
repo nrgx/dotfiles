@@ -50,7 +50,7 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 fi
 
 xrandr --output DP-0 --mode 1920x1080 --rate 239.96 &
-setxkbmap -layout "us,ru" -option "grp:super_space_toggle" &
+setxkbmap -layout us,ru -option grp:win_space_toggle &
 feh --bg-scale $HOME/pictures/wallpaper.jpg &
 polybar &
 pipewire &
