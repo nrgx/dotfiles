@@ -6,10 +6,10 @@ function main () {
             wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
             ;;
         up)
-            wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+
+            wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
             ;;
         down)
-            wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-
+            wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
             ;;
         *)
             ;;

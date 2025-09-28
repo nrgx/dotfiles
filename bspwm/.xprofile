@@ -49,14 +49,25 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 	unset f
 fi
 
+# Monitor resolution and frame rate
 xrandr --output DP-0 --mode 1920x1080 --rate 239.96 &
+# Keyboard layout
 setxkbmap -layout us,ru -option grp:win_space_toggle &
+# Wallpaper
 feh --bg-scale $HOME/pictures/wallpaper.jpg &
-polybar &
+# Audio start
 pipewire &
 wireplumber &
+# Compositor start
 picom -f &
+# Mouse pointer setup
 xsetroot -cursor_name left_ptr
+# Keyboard events for bspwm
 sxhkd &
+# Notification start
+pkill -x dunst && dunst &
+# Polybar start
+polybar &
+# BSPWM start
 exec bspwm
 

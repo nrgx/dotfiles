@@ -44,7 +44,9 @@ sudo xbps-install -Syu \
 	picom \
 	feh \
 	conky \
+	dunst \
 	fastfetch \
+	papirus-icon-theme \
 	btop \
 	fzf \
 	ripgrep \
@@ -54,7 +56,7 @@ sudo xbps-install -Syu \
 	wireplumber \
 	alsa-pipewire \
 	rtkit \
-	xbacklight \
+	brightnessctl \
 	dbus \
 	polkit \
 	yazi \
