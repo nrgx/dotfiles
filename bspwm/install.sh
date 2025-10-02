@@ -4,7 +4,7 @@
 sudo xbps-install -Syu
 
 # Allow installation of proprietary software
-sudo xbps-install void-repo-nonfree
+sudo xbps-install void-repo-multilib void-repo-nonfree
 
 # Set up time zone
 sudo ln -sf /usr/share/zoneinfo/Asia/Almaty /etc/localtime
@@ -64,17 +64,19 @@ sudo xbps-install -Syu \
 	libvirt \
 	virt-manager \
 	qemu \
-	firefox
+	firefox \
+    chrony
 
 # Enable services
-sudo ln -s /etc/sv/dbus		/var/service
-sudo ln -s /etc/sv/rtkit	/var/service
-sudo ln -s /etc/sv/polkitd	/var/service
-sudo ln -s /etc/sv/sddm		/var/service
-sudo ln -s /etc/sv/elogind	/var/service
-sudo ln -s /etc/sv/libvirtd	/var/service
-sudo ln -s /etc/sv/virtlogd	/var/service
+sudo ln -s /etc/sv/dbus		    /var/service
+sudo ln -s /etc/sv/rtkit	    /var/service
+sudo ln -s /etc/sv/polkitd	    /var/service
+sudo ln -s /etc/sv/sddm		    /var/service
+sudo ln -s /etc/sv/elogind	    /var/service
+sudo ln -s /etc/sv/libvirtd	    /var/service
+sudo ln -s /etc/sv/virtlogd	    /var/service
 sudo ln -s /etc/sv/virtlockd	/var/service
+sudo ln -s /etc/sv/chronyd      /var/service
 
 # Fonts setup
 sudo mkdir -p /usr/share/fonts/NerdFonts/ttf
@@ -82,5 +84,4 @@ sudo mkdir -p /usr/share/fonts/NerdFonts/ttf
 
 # Copy dotfiles to home root
 cp config ~/.config
-
 
