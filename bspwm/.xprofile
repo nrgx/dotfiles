@@ -17,36 +17,36 @@ sysmodmap="$xinitdir/.Xmodmap"
 # merge in defaults and keymaps
 
 if [ -f "$sysresources" ]; then
-    if [ -x /usr/bin/cpp ] ; then
-        "$xrdb" -merge "$sysresources"
-    else
-        "$xrdb" -nocpp -merge "$sysresources"
-    fi
+  if [ -x /usr/bin/cpp ]; then
+    "$xrdb" -merge "$sysresources"
+  else
+    "$xrdb" -nocpp -merge "$sysresources"
+  fi
 fi
 
 if [ -f "$sysmodmap" ]; then
-    "$xmodmap" "$sysmodmap"
+  "$xmodmap" "$sysmodmap"
 fi
 
 if [ -f "$userresources" ]; then
-    if [ -x /usr/bin/cpp ] ; then
-        "$xrdb" -merge "$userresources"
-    else
-        "$xrdb" -nocpp -merge "$userresources"
-    fi
+  if [ -x /usr/bin/cpp ]; then
+    "$xrdb" -merge "$userresources"
+  else
+    "$xrdb" -nocpp -merge "$userresources"
+  fi
 fi
 
 if [ -f "$usermodmap" ]; then
-    "$xmodmap" "$usermodmap"
+  "$xmodmap" "$usermodmap"
 fi
 
 # start some nice programs
 
-if [ -d "$xinitdir"/xinitrc.d ] ; then
-	for f in "$xinitdir/xinitrc.d"/?*.sh ; do
-		[ -x "$f" ] && . "$f"
-	done
-	unset f
+if [ -d "$xinitdir"/xinitrc.d ]; then
+  for f in "$xinitdir/xinitrc.d"/?*.sh; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
 fi
 
 # 2k horizontal monitor with 240 Hz refresh rate
@@ -57,8 +57,8 @@ xrandr --output DisplayPort-1 --mode 1920x1080 --rotate right --pos 2560x0 --rat
 setxkbmap -layout us,ru -option grp:win_space_toggle &
 # Wallpaper
 feh --no-fehbg \
-  --bg-fill $HOME/media/pictures/wallpaper/horizontal.jpg \
-  --bg-fill $HOME/media/pictures/wallpaper/vertical.jpg
+  --bg-fill ~/media/pictures/wallpapers/horizontal.jpg \
+  --bg-fill ~/media/pictures/wallpapers/vertical.jpg
 
 # Audio start
 pipewire &
@@ -75,4 +75,3 @@ pkill -x dunst && dunst &
 polybar &
 # BSPWM start
 exec bspwm
-
