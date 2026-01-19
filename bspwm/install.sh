@@ -7,33 +7,23 @@ sudo xbps-install -Syu
 sudo xbps-install void-repo-multilib void-repo-nonfree
 
 # Set up time zone
-sudo ln -sf /usr/share/zoneinfo/Asia/Almaty /etc/localtime
+# sudo ln -sf /usr/share/zoneinfo/Asia/Almaty /etc/localtime
 
 # Install necessary software
 sudo xbps-install -Syu \
 	base-devel \
 	sddm \
-	elogind \
-	nvidia \
-	wget \
-	curl \
+    xorg \
+	dbus \
+	polkit \
+	git \
 	zsh \
+	tmux \
+	curl \
+	wget \
+	neovim \
 	alacritty \
 	rxvt-unicode \
-	tmux \
-	neovim \
-	git \
-	p7zip \
-	xorg-server \
-	xset \
-	xinit \
-	xrandr \
-	xsetroot \
-	setxkbmap \
-	xorg-input-drivers \
-	xf86-input-libinput \
-	xrdb \
-	fontconfig \
 	dejavu-fonts-ttf \
 	noto-fonts-ttf \
 	font-awesome \
@@ -46,42 +36,47 @@ sudo xbps-install -Syu \
 	conky \
 	dunst \
 	fastfetch \
-	papirus-icon-theme \
-	btop \
 	fzf \
-	ripgrep \
+	btop \
+	rtkit \
+	p7zip \
 	ffmpeg \
-	os-prober \
+	ripgrep \
 	pipewire \
+	os-prober \
 	wireplumber \
 	alsa-pipewire \
-	rtkit \
 	brightnessctl \
-	dbus \
-	polkit \
 	yazi \
+    okular \
 	zathura \
+	qemu \
 	libvirt \
 	virt-manager \
-	qemu \
 	firefox \
-    chrony
+    lua \
+    luarocks
 
-# Enable services
-sudo ln -s /etc/sv/dbus		    /var/service
-sudo ln -s /etc/sv/rtkit	    /var/service
-sudo ln -s /etc/sv/polkitd	    /var/service
-sudo ln -s /etc/sv/sddm		    /var/service
-sudo ln -s /etc/sv/elogind	    /var/service
-sudo ln -s /etc/sv/libvirtd	    /var/service
-sudo ln -s /etc/sv/virtlogd	    /var/service
-sudo ln -s /etc/sv/virtlockd	/var/service
-sudo ln -s /etc/sv/chronyd      /var/service
+# Create services
+sudo ln -s /etc/sv/dbus /var/service
+sudo ln -s /etc/sv/rtkit /var/service
+sudo ln -s /etc/sv/polkitd /var/service
+sudo ln -s /etc/sv/sddm /var/service
+sudo ln -s /etc/sv/libvirtd /var/service
+sudo ln -s /etc/sv/virtlogd /var/service
+sudo ln -s /etc/sv/virtlockd /var/service
 
-# Fonts setup
-sudo mkdir -p /usr/share/fonts/NerdFonts/ttf
-# Go install FiraCode and symbols font and run fc-cache -fv
+# Copy BSPWM dotfiles to ~/.config
+cp -r .config ~/.config
 
-# Copy dotfiles to home root
-cp config ~/.config
+# Create home folders
+mkdir -p ~/downloads 
+mkdir -p ~/media/pictures/
+mkdir -p ~/media/screenshots/
+mkdir -p ~/projects
+mkdir -p ~/software
+
+# Copy wallpapers
+cp -r ../wallpapers ~/meida/pictures
+cp .xprofile ~
 

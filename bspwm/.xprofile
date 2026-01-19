@@ -49,12 +49,17 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 	unset f
 fi
 
-# Monitor resolution and frame rate
-xrandr --output DP-0 --mode 1920x1080 --rate 239.96 &
+# 2k horizontal monitor with 240 Hz refresh rate
+xrandr --output DisplayPort-0 --mode 2560x1440 --rate 240 &
+# FullHD vertical monitor with 240 Hz refresh rate (rotated)
+xrandr --output DisplayPort-1 --mode 1920x1080 --rotate right --pos 2560x0 --rate 240 &
 # Keyboard layout
 setxkbmap -layout us,ru -option grp:win_space_toggle &
 # Wallpaper
-feh --bg-scale $HOME/pictures/wallpaper.jpg &
+feh --no-fehbg \
+  --bg-fill $HOME/media/pictures/wallpaper/horizontal.jpg \
+  --bg-fill $HOME/media/pictures/wallpaper/vertical.jpg
+
 # Audio start
 pipewire &
 wireplumber &
