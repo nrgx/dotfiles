@@ -11,7 +11,7 @@ sudo ln -sf /usr/share/zoneinfo/Asia/Almaty /etc/localtime
 
 # Install necessary software
 sudo xbps-install -Syu base-devel opendoas \
-  sddm xorg dbus polkit \
+  sddm xorg dbus polkit chrony \
   git zsh tmux curl wget alacritty rxvt-unicode neovim lua luarocks \
   dejavu-fonts-ttf noto-fonts-ttf font-awesome \
   bspwm sxhkd rofi polybar picom feh conky dunst fastfetch \
@@ -26,6 +26,7 @@ sudo ln -s /etc/sv/dbus /var/service
 sudo ln -s /etc/sv/rtkit /var/service
 sudo ln -s /etc/sv/polkitd /var/service
 sudo ln -s /etc/sv/sddm /var/service
+sudo ln -s /etc/sv/chronyd /var/service
 sudo ln -s /etc/sv/libvirtd /var/service
 sudo ln -s /etc/sv/virtlogd /var/service
 sudo ln -s /etc/sv/virtlockd /var/service
