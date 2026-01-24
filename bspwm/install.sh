@@ -40,6 +40,10 @@ ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf ~/.config/pipewire/pip
 sudo mkdir -p /etc/alsa/conf.d
 sudo ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d
 sudo ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d
+# pam_rundir is responsible for creating and deleting $XDG_RUNTIME_DIR
+# sudo nvim /etc/pam.d/login
+# and add this line at the end (press tab after each word)
+# -session    optional    pam_rundir.so
 
 # Create home folders
 mkdir -p ~/downloads
