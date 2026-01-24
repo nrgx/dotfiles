@@ -1,22 +1,20 @@
-[general]
-import			= [
-	"~/.config/alacritty/themes/themes/cyber_punk_neon.toml"
-]
+#[general]
+#import = []
 
 [window]
-startup_mode		= "Fullscreen"
+startup_mode = "Maximized"
 
 [font]
-normal			= { family = "FiraCode NerdFont Ret", style = "Retina" }
-size			= 12
+normal = { family = "FiraCode NerdFont Ret", style = "Retina" }
+size = 12
 
 [selection]
-save_to_clipboard	= true
+save_to_clipboard = true
 
 [cursor]
-style			= { shape = "Underline", blinking = "Always" }
-thickness		= 0.2
-blink_interval		= 450
+style = { shape = "Underline", blinking = "Always" }
+thickness = 0.2
+blink_interval = 450
 
 [mouse]
-hide_when_typing	= true
+hide_when_typing = true
