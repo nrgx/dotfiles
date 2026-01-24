@@ -16,7 +16,7 @@ sudo xbps-install -Syu base-devel opendoas \
   dejavu-fonts-ttf noto-fonts-ttf font-awesome \
   bspwm sxhkd rofi polybar picom feh conky dunst fastfetch \
   fzf btop rtkit p7zip ffmpeg ripgrep os-prober \
-  pam_rundir pipewire wireplumber alsa-pipewire brightnessctl \
+  turnstile pipewire wireplumber alsa-pipewire brightnessctl \
   yazi okular zathura \
   qemu libvirt virt-manager \
   firefox
@@ -27,6 +27,7 @@ sudo ln -s /etc/sv/rtkit /var/service
 sudo ln -s /etc/sv/polkitd /var/service
 sudo ln -s /etc/sv/sddm /var/service
 sudo ln -s /etc/sv/chronyd /var/service
+sudo ln -s /etc/sv/turnstiled /var/service
 sudo ln -s /etc/sv/libvirtd /var/service
 sudo ln -s /etc/sv/virtlogd /var/service
 sudo ln -s /etc/sv/virtlockd /var/service
@@ -41,10 +42,6 @@ ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf ~/.config/pipewire/pip
 sudo mkdir -p /etc/alsa/conf.d
 sudo ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d
 sudo ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d
-# pam_rundir is responsible for creating and deleting $XDG_RUNTIME_DIR
-# sudo nvim /etc/pam.d/login
-# and add this line at the end (press tab after each word)
-# -session    optional    pam_rundir.so
 
 # Create home folders
 mkdir -p ~/downloads
