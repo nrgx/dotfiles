@@ -1,3 +1,5 @@
-# nrgx' dotfiles
+# nrgx/dotfiles
 
-Config files for my MDE setup and ricing on Void Linux. 
+BSPWM and more configs for VoidLinux setup
+
+(In Firefox advanced font settings uncheck "Allow pages to choose their own fonts, instead of your selections above")
