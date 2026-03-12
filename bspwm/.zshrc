@@ -1,5 +1,5 @@
 # Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/pdiddy/.zsh/completions:"* ]]; then export FPATH="/home/pdiddy/.zsh/completions:$FPATH"; fi
+if [[ ":$FPATH:" != *":/home/nrgx/.zsh/completions:"* ]]; then export FPATH="/home/nrgx/.zsh/completions:$FPATH"; fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -107,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 . "$HOME/.local/bin/env"
-. "/home/pdiddy/.deno/env"
+. "/home/nrgx/.deno/env"
 export GOPATH=$HOME/software/go
 export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/go
