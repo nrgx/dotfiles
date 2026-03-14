@@ -34,7 +34,7 @@ sudo ln -s /etc/sv/virtlogd /var/service
 sudo ln -s /etc/sv/virtlockd /var/service
 
 # Copy BSPWM dotfiles to ~/.config
-cp -r .config .xprofile ~
+cp -r .config .xprofile .zshrc ~
 
 # Setup alsa, pipewire and wireplumber
 mkdir -p ~/.config/pipewire/pipewire.conf.d/

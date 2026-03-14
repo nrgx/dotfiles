@@ -1,3 +1,4 @@
+typeset -U path
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/nrgx/.zsh/completions:"* ]]; then export FPATH="/home/nrgx/.zsh/completions:$FPATH"; fi
 # If you come from bash you might have to change your $PATH.
@@ -106,14 +107,25 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-. "$HOME/.local/bin/env"
-. "/home/nrgx/.deno/env"
+
+# go
 export GOPATH=$HOME/software/go
 export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin:$GOPAT:$GOBIN
+path=(
+  $GOROOT/bin
+  $GOPATH
+  $GOBIN
+  $path
+)
+
+# deno
+. "$HOME/.deno/env"
+# uv
+. "$HOME/.local/bin/env"
 # Initialize zsh completions (added by deno install script)
 autoload -Uz compinit
 compinit
 
 alias v=nvim
+
